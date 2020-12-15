@@ -2,10 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Nav = (props) => {
-    const {itemsNumber, setItemNum} = props
-    const addItem = () => {
-        setItemNum(itemsNumber + 1)
-    }
+    const {itemsNumber} = props
     return (
         <header>
             <Link to="/"><h1>Chris Bolas' Shop</h1></Link>
@@ -20,9 +17,7 @@ const Nav = (props) => {
                     <Link to="/contact">Contact</Link>
                 </li>
             </ul>
-            <Link to="/cart">Cart: {itemsNumber}</Link>
-            <button onClick={addItem}>Increase Items</button>
-            
+            <Link to="/cart">Cart: {itemsNumber}</Link>            
         </header>
     )
 }

@@ -10,9 +10,10 @@ const Card = ({ id, title, description, photoUrl, price, addItem }) => {
                 title,
                 description,
                 photoUrl,
-                price,
-                count
+                price: parseFloat(price),
+                count: parseInt(count)
             })
+            setCount(0)
         }
     }
 

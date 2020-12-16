@@ -4,7 +4,17 @@ import Card from './Card'
 
 const Shop = ({ setItems }) => {
     const addItem = ( item ) => {
-        setItems(prevItems => prevItems.concat(item))
+        setItems(prevItems => {
+            let index = prevItems.findIndex(listItem => listItem.id === item.id)
+            if (index !== -1) {
+                // Add count to current cart count
+                let newItems = [...prevItems]
+                newItems[index].count += item.count
+                return newItems
+            }
+            // Item not in cart already, add them
+            return prevItems.concat(item)
+        })
     }
 
     return (
@@ -18,7 +28,6 @@ const Shop = ({ setItems }) => {
                 price='9.99'
                 addItem={addItem}
             />
-            <button onClick={() => addItem('a thing?')}>Add Item</button>
         </div>
     );
 }

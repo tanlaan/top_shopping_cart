@@ -10,9 +10,15 @@ import Cart     from './components/Cart'
 const Routes = () => {
     const [itemNum, setItemNum] = useState(0)
     const [cartItems, setCartItems] = useState([])
+    const [cartTotal, setCartTotal] = useState(0)
 
     useEffect( () => {
         setItemNum(cartItems.length)
+        setCartTotal( () => {
+            return cartItems.reduce ( (total, item) => {
+                return total += (item.price * item.count)
+            }, 0)
+        })
     }, [cartItems])
 
     return (
@@ -29,7 +35,11 @@ const Routes = () => {
                         <Shop setItems={setCartItems} />
                     </Route>
                     <Route path='/cart' >
-                        <Cart items={cartItems} setItems={setCartItems} />
+                        <Cart 
+                            items={cartItems} 
+                            setItems={setCartItems} 
+                            total={cartTotal}
+                        />
                     </Route>
                 </Switch>
             </main>

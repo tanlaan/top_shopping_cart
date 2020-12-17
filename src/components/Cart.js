@@ -25,7 +25,9 @@ const Cart = ({ items, setItems, total}) => {
     return (
         <div>
             <h2>Shopping Cart</h2>
-            {itemList.length === 0 ? <p>Nothing to see here.</p> : itemList}
+            <ul>
+                {itemList.length === 0 ? <p>Nothing to see here.</p> : itemList}
+            </ul>
             <h3>Total: ${total.toFixed(2)}</h3>
         </div>
     );

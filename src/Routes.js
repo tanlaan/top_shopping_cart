@@ -6,6 +6,7 @@ import About    from './components/About'
 import Contact  from './components/Contact'
 import Shop     from './components/Shop'
 import Cart     from './components/Cart'
+import './App.css'
 
 const Routes = () => {
     const [itemNum, setItemNum] = useState(0)

@@ -18,7 +18,7 @@ const Card = ({ id, title, description, photoUrl, price, addItem }) => {
     }
 
     return (
-        <div>
+        <div className="shop-card">
             <img src={photoUrl} alt={title} width='200px' />
             <h3>{title}</h3>
             <p>{description}</p>

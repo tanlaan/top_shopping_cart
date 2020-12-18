@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartItem = ({ id, title, description, photoUrl, price, count, updateItem}) => {
     return (
-        <div>
+        <div className="cart-item">
             <h3>{title}</h3>
             <p>{description}</p>
             <p>Price: ${price} x {count}</p>

@@ -1,5 +1,8 @@
 # Chris Bolas' Shopping Cart Project
 
+## Check it out
+[Here](https://tanlaan.github.io/top_shopping_cart/)
+
 ## Back Story
 
 ### The Odin Project Link
